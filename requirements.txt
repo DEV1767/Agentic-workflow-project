@@ -1,0 +1,29 @@
+# AI Agent Frameworks
+crewai
+langchain
+langgraph
+langchain-community
+langchain-groq
+
+# LLM and Web Search
+tavily-python
+
+# Environment Variables
+python-dotenv
+
+# Backend API
+fastapi
+uvicorn[standard]
+
+# Database
+pymongo
+
+# Data Validation
+pydantic
+
+# HTTP Requests
+httpx
+requests
+
+# Testing
+pytest
