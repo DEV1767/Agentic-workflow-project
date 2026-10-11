@@ -1,5 +1,5 @@
 from crewai import Agent
-from multi_agent_1.config.llm import llm
+from multi_agent_1.config.llm import llm_2
 
 
 sampling_agent=Agent(
@@ -18,7 +18,7 @@ sampling_agent=Agent(
         "based on the research objectives and available resources."
     ),
 
-    llm=llm,
+    llm=llm_2,
     verbose=True,
     allow_delegation=False,
 )

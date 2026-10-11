@@ -1,5 +1,5 @@
 from crewai import Agent
-from multi_agent_1.config.llm import llm
+from multi_agent_1.config.llm import llm_2
 
 data_analysis_agent=Agent(
     role="Data Collection and Analysis Specialist",
@@ -18,7 +18,7 @@ data_analysis_agent=Agent(
         "data, calculations, or statistical results."
     ),
     
-    llm=llm,
+    llm=llm_2,
     verbose=True,
     allow_delegation=False
 )

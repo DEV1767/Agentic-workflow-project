@@ -1,5 +1,5 @@
 from crewai import Agent
-from multi_agent_1.config.llm import llm
+from multi_agent_1.config.llm import llm_1
 
 research_writer_agent=Agent(
     role="Acedemic Research Report Writer",
@@ -16,8 +16,9 @@ research_writer_agent=Agent(
         "into clear academic reports. You never invent sources," 
         "data, statistical result, or research findings."
     ),
-    llm=llm,
+    llm=llm_1,
     verbose=True,
     allow_delegation=False
 )
+
 

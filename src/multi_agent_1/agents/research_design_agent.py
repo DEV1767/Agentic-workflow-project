@@ -1,5 +1,5 @@
 from crewai import Agent
-from multi_agent_1.config.llm import llm
+from multi_agent_1.config.llm import llm_2
 
 research_design_agent=Agent(
     role="Research Design and Hypothesis Specialist",
@@ -18,7 +18,7 @@ research_design_agent=Agent(
         "been tested without actual data."
     )
     ,
-    llm=llm,
+    llm=llm_2,
     verbose=True,
     allow_delegation=False,
 )
