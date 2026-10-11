@@ -5,15 +5,33 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
+def reconstruct_abstract(inverted_index: dict | None) -> str:
+    """Convert an OpenAlex inverted-index abstract into readable text."""
+
+    if not inverted_index:
+        return ""
+
+    words = {}
+
+    for word, positions in inverted_index.items():
+        for position in positions:
+            words[position] = word
+
+    return " ".join(
+        words[position]
+        for position in sorted(words)
+    )
+
+
 def search_openalex(query: str, max_results: int = 2) -> list[dict]:
     """Search OpenAlex for academic research papers."""
 
     url = "https://api.openalex.org/works"
 
     params = {
-    "search": query.replace("?", "").replace("*", ""),
-    "per_page": max_results,
-}
+        "search": query.replace("?", "").replace("*", ""),
+        "per_page": max_results,
+    }
 
     api_key = os.getenv("OPENALEX_API_KEY")
 
@@ -21,7 +39,11 @@ def search_openalex(query: str, max_results: int = 2) -> list[dict]:
         params["api_key"] = api_key
 
     try:
-        response = requests.get(url, params=params, timeout=30)
+        response = requests.get(
+            url,
+            params=params,
+            timeout=30,
+        )
 
         if not response.ok:
             print("OpenAlex status:", response.status_code)
@@ -37,7 +59,9 @@ def search_openalex(query: str, max_results: int = 2) -> list[dict]:
                 "citations": paper.get("cited_by_count"),
                 "doi": paper.get("doi"),
                 "url": paper.get("id"),
-                "abstract": paper.get("abstract_inverted_index"),
+                "abstract": reconstruct_abstract(
+                    paper.get("abstract_inverted_index")
+                ),
                 "source": "OpenAlex",
             }
             for paper in papers
