@@ -4,13 +4,15 @@
 
 ---
 
-## 📺 Demo Video
+## 📺 Demo Walkthrough
 
 <div align="center">
-  <video src="assets/demo.mp4" controls width="100%" style="max-height: 500px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-    Your browser does not support the video tag.
-  </video>
+  <img src="assets/demo.gif" alt="AI Research Assistant Demo Walkthrough" width="100%" style="max-height: 520px; border-radius: 10px; box-shadow: 0 4px 16px rgba(0,0,0,0.2);" />
 </div>
+
+<p align="center">
+  <em>Interactive research workflow powered by LangGraph, FastAPI, and Groq. Full MP4 version available in <a href="assets/demo.mp4"><code>assets/demo.mp4</code></a>.</em>
+</p>
 
 ---
 
