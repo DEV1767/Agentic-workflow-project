@@ -1,8 +1,12 @@
-from multi_agent_1.services.research_chain import research
+from multi_agent_1.services.literature_services import conduct_literature_review
 
-question = "What are the latest developments in multi-agent AI?"
+result = conduct_literature_review(
+    topic="AI-based detection of fake job and internship offers",
+    research_problem=(
+        "How can AI identify fraudulent job postings "
+        "while minimizing false positives?"
+    ),
+)
 
-answer = research(question)
-
-print("\n========== RESEARCH REPORT ==========\n")
-print(answer)
+print("\n========== LITERATURE REVIEW ==========\n")
+print(result)
