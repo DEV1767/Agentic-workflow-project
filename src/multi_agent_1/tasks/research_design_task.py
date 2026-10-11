@@ -1,5 +1,5 @@
 from crewai import Task
-from multi_agent_1.agents.research_question_agent import research_question_agent
+from multi_agent_1.agents.research_design_agent import research_design_agent
 
 research_design_task=Task(
     description="""
@@ -15,7 +15,7 @@ research_design_task=Task(
     {literature_review}
 
     Research Questions and Objectives:
-    {research_questions}
+    {research_question}
 
     Complete the following sections:
 
@@ -57,5 +57,5 @@ research_design_task=Task(
         "the research approach, research design, variables, "
         "hypotheses, data requirements, and methodological limitations."
     ),
-    agent=research_question_agent,
+    agent=research_design_agent,
 )

@@ -1,4 +1,6 @@
 from crewai import Crew,Process
+import crewai.llms.cache as crewai_cache
+crewai_cache.mark_cache_breakpoint = lambda msg: msg
 from multi_agent_1.agents.research_question_agent import research_question_agent
 from multi_agent_1.tasks.research_question_task import research_question_task
 

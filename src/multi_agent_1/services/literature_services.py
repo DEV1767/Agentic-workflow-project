@@ -15,15 +15,15 @@ def conduct_literature_review(
     # Step 1: Search and remove duplicate results
     search_results = search_and_deduplicate(topic)
 
-    # Step 2: Prepare evidence for the agent
+    # Step 2: Prepare evidence for the agent (limit to top 4 papers to control prompt tokens)
     research_evidence = "\n\n".join(
         [
             f"Title: {paper.get('title', 'Unknown')}\n"
             f"Year: {paper.get('year', 'Unknown')}\n"
             f"Source: {paper.get('source', 'Unknown')}\n"
             f"URL: {paper.get('url', 'Unknown')}\n"
-            f"Abstract: {paper.get('abstract', 'Not available')}"
-            for paper in search_results
+            f"Abstract: {str(paper.get('abstract', 'Not available'))[:350]}"
+            for paper in search_results[:4]
         ]
     )
 

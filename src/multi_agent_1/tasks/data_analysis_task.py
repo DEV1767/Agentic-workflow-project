@@ -12,7 +12,7 @@ data_analysis_task=Task(
     {research_problem}
 
     Research Questions:
-    {research_questions}
+    {research_question}
 
     Research Design:
     {research_design}

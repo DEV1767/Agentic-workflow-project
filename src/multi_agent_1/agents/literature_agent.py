@@ -1,16 +1,7 @@
-import os
-from dotenv import load_dotenv
-from crewai import Agent,LLM
+from crewai import Agent
+from multi_agent_1.config.llm import llm
 
-load_dotenv()
-
-llm=LLM(
-    model="groq/openai/gpt-oss-120b",
-    api_key=os.getenv("GROQ_API_KEY"),
-    temperature=0.2,
-)
-
-literature_agent=Agent(
+literature_agent = Agent(
     role="Academic Literature Review Specialist",
 
     goal=(
@@ -24,5 +15,5 @@ literature_agent=Agent(
     ),
     llm=llm,
     verbose=True,
-    allow_delegation=False
-)
+    allow_delegation=False,
+)
