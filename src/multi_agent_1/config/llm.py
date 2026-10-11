@@ -12,7 +12,7 @@ llm_1 = LLM(
     model="groq/openai/gpt-oss-120b",
     api_key=os.getenv("GROQ_API_KEY"),
     temperature=0.2,
-    max_tokens=800,
+    max_tokens=3500,
 )
 
 # Model 2: gpt-oss-20b using secondary Groq key
@@ -20,7 +20,7 @@ llm_2 = LLM(
     model="groq/openai/gpt-oss-20b",
     api_key=os.getenv("GROQ_API_KEY_2"),
     temperature=0.2,
-    max_tokens=800,
+    max_tokens=3500,
 )
 
 # Default alias for backwards compatibility
